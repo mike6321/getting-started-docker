@@ -15,3 +15,25 @@ docker build --tag first-image:0.1 -f Dockerfile .
 docker run -it first-image:0.1 bash
 ```
 
+------
+
+####  Docker를 이용한 가상화 시스템 구축
+
+```sh
+docker build -t nodejs-demo:lastest -f Dockerfile .
+```
+
+ ```sh
+ docker run nodejs-demo 
+ ```
+
+```sh
+docker exec -it 3567c30e20ff s
+```
+
+한줄
+
+```sh
+docker run -p 18000:8000 --name my-node nodejs-demo1:v2.0
+```
+
