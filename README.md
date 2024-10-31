@@ -41,6 +41,8 @@ docker run -p 18000:8000 --name my-node nodejs-demo1:v1.0
 
 ### Registry Container 사용
 
+Local
+
 ```sh
 docker run -d -p 5000:5000 --restart always --name registry registry:2
 ```
@@ -65,3 +67,20 @@ docker tag nodejs-demo:v1.0 localhost:5000/nodejs-demo:v1.0
 docker push localhost:5000/nodejs-demo:v1.0
 ```
 
+Cloud
+
+```sh
+docker tag nodejs-demo:v2.0 junwoo123/nodejs-demo:v2.0
+```
+
+```sh
+docker push nodejs-demo:v2.0
+```
+
+* 다운로드
+
+  ```sh
+  docker pull junwoo123/nodejs-demo:v2.0
+  ```
+
+  
