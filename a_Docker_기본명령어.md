@@ -31,3 +31,12 @@ docker exec -it 3567c30e20ff s
 ```sh
 docker run -p 18000:8000 --name my-node nodejs-demo1:v1.0
 ```
+
+------
+
+#### 이전에 사용했던 명령어 찾기
+
+```sh
+history | grep mariadb
+```
+
