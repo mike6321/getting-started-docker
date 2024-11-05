@@ -26,3 +26,7 @@ replay_pid*
 .idea/
 
 .DS_Store
+
+*.lst
+
+my-backend/target/surefire-reports/
