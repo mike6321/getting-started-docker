@@ -1,4 +1,4 @@
-MariaDB 컨테이너 생성
+**MariaDB 컨테이너 생성**
 
 ```sh
 docker run -d -p 13306:3306 \
@@ -8,7 +8,7 @@ docker run -d -p 13306:3306 \
         mariadb:latest
 ```
 
-네트워크 생성
+**네트워크 생성**
 
 ```sh
 docker network create --driver bridge my-network
@@ -22,7 +22,7 @@ docker network create --driver bridge my-network
 docker network inspect my-network
 ```
 
-MariaDB Registry push
+**MariaDB Registry push**
 
 * 태그생성
 
@@ -36,7 +36,7 @@ docker tag mariadb:latest junwoo123/my-mariadb:latest
 docker push junwoo123/my-mariadb
 ```
 
-MariaDB 컨테이너 생성
+**MariaDB 컨테이너 생성**
 
 * my-network 에 연결하여 생성
 
@@ -60,7 +60,7 @@ docker run -d -p 13306:3306 --network my-network\
 }
 ```
 
-back-end service build
+**back-end service build**
 
 ```sh
 docker build -t catalog-service:mariadb-demo -f Dockerfile .

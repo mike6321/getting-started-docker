@@ -1,12 +1,10 @@
-### Registry Container 사용
-
-Local
+Local Registry Container 사용
 
 ```sh
 docker run -d -p 5000:5000 --restart always --name registry registry:2
 ```
 
-* repository 목록 조회
+repository 목록 조회
 
 ```sh
 curl http://localhost:5000/v2/_catalog
@@ -16,7 +14,7 @@ curl http://localhost:5000/v2/_catalog
 curl http://localhost:5000/v2/nodejs-demo/tags/list
 ```
 
-* repository push
+repository push
 
 ```sh
 docker tag nodejs-demo:v1.0 localhost:5000/nodejs-demo:v1.0
@@ -26,7 +24,7 @@ docker tag nodejs-demo:v1.0 localhost:5000/nodejs-demo:v1.0
 docker push localhost:5000/nodejs-demo:v1.0
 ```
 
-Cloud
+Cloud Registry Container 사용
 
 ```sh
 docker tag nodejs-demo:v2.0 junwoo123/nodejs-demo:v2.0
@@ -36,8 +34,8 @@ docker tag nodejs-demo:v2.0 junwoo123/nodejs-demo:v2.0
 docker push nodejs-demo:v2.0
 ```
 
-* 다운로드
+다운로드
 
-  ```
-  docker pull junwoo123/nodejs-demo:v2.0
-  ```
+```
+docker pull junwoo123/nodejs-demo:v2.0
+```

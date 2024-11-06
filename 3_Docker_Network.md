@@ -1,18 +1,16 @@
-### Docker Network
-
-* Docker Network 확인
+Docker Network 확인
 
 ```sh
 docker network ls
 ```
 
-* Container 상세정보 확인
+Container 상세정보 확인
 
 ```sh
 docker container inspect 23df8309ebae
 ```
 
-* Bridge 상세정보 확인
+Bridge 상세정보 확인
 
 ```sh
 docker network inspect bridge

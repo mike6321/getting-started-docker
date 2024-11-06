@@ -1,6 +1,4 @@
-### 컨테이너간 네트워크 연결
-
-* 우분투 실행
+우분투 실행
 
 ```sh
 docker run -it ubuntu:16.04 bash
@@ -10,7 +8,7 @@ docker run -it ubuntu:16.04 bash
 hostname -i
 ```
 
-* 네트워크 생성
+네트워크 생성
 
 ```sh
 docker network create --driver bridge my-network
@@ -24,7 +22,7 @@ b3ac71c5adc5   my-network   bridge    local
 2ab5eaa81d68   none         null      local
 ```
 
-* 생성한 네트워크 정보 확인
+생성한 네트워크 정보 확인
 
 ```sh
 docker network inspect my-network
@@ -65,7 +63,7 @@ docker network inspect my-network
 
 -> 포함된 컨테이너 x
 
-* Network 연결
+Network 연결
 
 ```sh
 docker run -d -p 5000:5000 --restart always --network my-network --name registry registry:2
@@ -161,7 +159,8 @@ rtt min/avg/max/mdev = 0.184/0.217/0.282/0.040 ms
 
 -> 성공
 
-* 이미 만들어진 Container 에 Network를 추가하는 방법
+이미 만들어진 Container 에 Network를 추가하는 방법
+
 * nodejs-demo:v1.0 컨테이너 실행 (daemon)
 
 ```sh
