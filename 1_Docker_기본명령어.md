@@ -56,3 +56,35 @@ start 와 run 의 차이
   * 사용하지 않는 경우 내부로 진입 불가 
 
 ex) docker run -it --network my-network ubuntu:16.04 bash
+
+컨테이너 실행 시 이름 부여
+
+```sh
+docker run --name [NAME] [IMAGE]
+```
+
+실행 중인 컨테이너에 접속
+
+```sh
+docker start my-ubuntu   # 컨테이너를 시작
+docker attach my-ubuntu  # 현재 터미널을 컨테이너에 연결
+```
+
+```sh
+docker start my-ubuntu   # 컨테이너를 시작
+docker exec -it my-ubuntu /bin/bash  # 새 셸 세션 연결
+```
+
+컨테이너 종료 시 자동 삭제
+
+```sh
+docker run --rm [IMAGE]
+```
+
+우분투 vim 설치
+
+```sh
+sudo apt update   # 패키지 목록 업데이트
+sudo apt install vim -y  # vim 패키지 설치
+```
+
