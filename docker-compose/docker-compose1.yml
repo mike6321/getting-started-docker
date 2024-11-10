@@ -1,0 +1,7 @@
+version: "3.1"
+services:
+  my-webserver:
+    platform: linux/arm64
+    image: nginx:latest
+    ports:
+      - 81:80
