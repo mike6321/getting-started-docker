@@ -88,3 +88,11 @@ sudo apt update   # 패키지 목록 업데이트
 sudo apt install vim -y  # vim 패키지 설치
 ```
 
+docker-compose.yml 백그라운드 실행
+
+* 순서 중요 (맨뒤)
+
+```sh
+docker-compose -f ./docker-compose2.yml up -d
+```
+

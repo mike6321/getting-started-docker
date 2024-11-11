@@ -1,0 +1,35 @@
+version: "3.1"
+services:
+  my-db:
+    platform: linux/arm64
+    image: mariadb:latest
+    environment:
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true
+      - MARIADB_DATABASE=mydb
+    ports:
+      - 13306:3306
+    volumes:
+      - /Users/cg6jq7y05g/repository/study/getting-started-docker/docker-compose/data:/var/lib/mysql
+    networks:
+      - my-network
+
+  my-backend:
+    image: junwoo123/catalog-service:latest
+    environment:
+      - spring.datasource.url=jdbc:mariadb://my-db:3306/mydb
+      - spring.datasource.password=
+    ports:
+      - 8088:8088
+    depends_on:
+      - my-db
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    external: true
+
+# external: true 의 사용 이유
+#  •	기존 네트워크에 연결할 때: Docker Compose 파일을 실행할 때마다 네트워크를 생성하지 않고, 이미 생성된 네트워크를 재사용할 때 유용합니다.
+#  •	여러 Compose 파일 간의 네트워크 공유: 여러 Docker Compose 파일이 동일한 네트워크에 연결되어야 할 때 사용됩니다.
+#  •	Docker CLI로 만든 네트워크 사용: docker network create my-network 명령으로 만든 네트워크를 Compose에서 참조할 수 있습니다.

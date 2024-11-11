@@ -1,0 +1,12 @@
+version: "3.1"
+services:
+  my-db:
+    platform: linux/arm64
+    image: mariadb:latest
+    environment:
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true
+      - MARIADB_DATABASE=mydb
+    ports:
+      - 13306:3306
+    volumes:
+      - /Users/cg6jq7y05g/repository/study/getting-started-docker/docker-compose/data:/var/lib/mysql

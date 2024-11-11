@@ -30,3 +30,7 @@ replay_pid*
 *.lst
 
 my-backend/target/surefire-reports/
+
+docker-compose/data/
+
+my-backend/target/
