@@ -98,7 +98,7 @@ services:
       - my-network
 
   my-backend:
-    image: junwoo123/catalog-service:latest
+    image: junwoo123/catalog-service:v4.0
     environment:
       - spring.datasource.url=jdbc:mariadb://my-db:3306/mydb
       - spring.datasource.password=
@@ -182,7 +182,7 @@ services:
       - my-network
 
   my-backend:
-    image: junwoo123/catalog-service:latest
+    image: junwoo123/catalog-service:v4.0
     environment:
       - spring.datasource.url=jdbc:mariadb://my-db:3306/mydb
       - spring.datasource.password=
